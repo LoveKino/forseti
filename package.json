@@ -1,0 +1,30 @@
+{
+  "name": "forseti",
+  "version": "1.0.1",
+  "description": "json validator",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LoveKino/jsonValidator.git"
+  },
+  "keywords": [
+    "json",
+    "validator",
+    "json correctness",
+    "validity"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "ddchen",
+    "email": "842914439@qq.com"
+  }
+}
