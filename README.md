@@ -220,4 +220,6 @@ jsonValidator.registerMarkerMap({
 			});
 ```
 
-
+allow validation rule nest
+-----------------------------------
+allow nest like: maker.um(maker.ian(value))
