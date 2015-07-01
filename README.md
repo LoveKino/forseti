@@ -128,7 +128,7 @@ console.log(result);
 ```
 Sample stands for a group of validation rules. SourceJson is our source data. By call jsonValidator.validate, we get result.
 Result is an object which contains attribute pass and other. If pass is true means sourceJson satisfy validation rule. Otherwise, we get failInfo to present failing massage.
-For example:
+For example:<br>
 right situdation
 ```
 {
