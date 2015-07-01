@@ -59,7 +59,7 @@ console.log(result);
 // }
 
 ```
-Let's look at the code line by line
+Let's look at the code line by line.
 ### import forseti
 ```
 var jsonValidator = require("forseti");
@@ -150,6 +150,76 @@ wrong situation
 }
 ```
 * position<br>
-  where to fail.
+  Where to fail.
 * type<br>
-  which kind of rule.
+  Which kind of rule.
+
+Right now, we know that how to what forseti can do and how to use forseti. Next, we will talk how to expand validation rules.
+
+Expand validation rules
+-----------------------------------
+Customize maker function in prototype level or instance level.
+
+### Customize maker in instance level
+When we get a maker, like that:
+```
+var m = jsonValidator.createMarker(true);
+```
+We can expand maker just for m (that's why we call that instance level).
+For example:
+```
+var m = jsonValidator.createMarker(true);
+m.addRule("inab", {
+	check: function(json, propName, extra) {
+		var value = json[propName];
+		return !(value === false || value === true);
+	}
+});
+
+// then we can use that
+var markedSample = {
+	name: m.inab("ddchen")
+};
+```
+or use a map
+```
+m.addRuleMap({
+	"inab", {
+		check: function(json, propName, extra) {
+			var value = json[propName];
+			return !(value === false || value === true);
+		}
+	}
+});
+```
+
+### Customize maker in prototype level
+This is kind of customization is working for all maker.
+For example:
+```
+jsonValidator.registerMarkerType("um", {
+		check: function(json, propName, extra) {
+			return json.hasOwnProperty(propName);
+		}
+	);
+```
+Or use a map:
+```
+jsonValidator.registerMarkerMap({
+			"um": {
+				check: function(json, propName, extra) {
+					return json.hasOwnProperty(propName);
+				}
+			},
+			"im": { // shortcut of "is matching"
+				check: function(json, propName, extra) {
+					var attrValue = json[propName];
+					if (extra instanceof RegExp) {
+						return extra.test(attrValue);
+					}
+					return false;
+				}
+			});
+```
+
+
