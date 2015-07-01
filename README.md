@@ -192,7 +192,7 @@ m.addRuleMap({
 ```
 
 ### Customize maker in prototype level
-This is kind of customization is working for all maker.
+This kind of customization is working for all maker.
 For example:
 ```
 jsonValidator.registerMarkerType("um", {
