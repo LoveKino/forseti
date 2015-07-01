@@ -24,7 +24,7 @@ This kind of procedure is json format data validation, we make a judgment that w
 
 In this example, A and B are source json. "age must be a number" is a validation rule. Validation rules is a group of validation rule. Because A satisfy validation rules, so A is right. B do not satisfy one of validation rules, so B is wrong.
 
-How forseti deal with validation?
+How does forseti deal with validation?
 -----------------------------------
 It looks like this:
 ```
