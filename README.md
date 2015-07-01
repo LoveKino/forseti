@@ -105,6 +105,7 @@ M is a maker we defined in previous sentance. A maker contain a group of functio
 For example: 
 * 'name: m.um("ddchen")' mean attibute name is unmissing. (um is the shortcut of unmissing).
 * 'level: m.ian(5)' means attribute level is a number type. (ian is the shortcut of 'is a number').<br>
+
 Right now, we understand that by using function of a maker to wrapper an attribute, we can declare a validtion rule on the attribute.
 About maker, you need to know more:
 * we already defined a goup of functions.<br>
