@@ -4,7 +4,7 @@ A new way to validate a json format data.
 
 What is json format data validation?
 -----------------------------------
-Assume there are a json type data, I do not know it's correct or not. So I will validate this json.
+Assume there is a json type data, I do not know it's correct or not. So I will validate this json.
 For example, I get two json fomat data:
 ```
 A:{
