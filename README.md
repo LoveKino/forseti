@@ -98,7 +98,7 @@ var sample = {
 }
 ```
 Sample is the key to define validation rules. Sample looks similar to sourceJson, but there are some Differences.
-* miss some attributes
+* missing some attributes
 * there are some special sentances like 'name: m.um("ddchen")', 'level: m.ian(5)'.<br>
 m is a maker we defined in previous sentance. A maker contain a group of functions which you can be used to declare rules.
 For example: 
