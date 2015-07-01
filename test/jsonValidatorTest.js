@@ -4,9 +4,7 @@ var assert = require("assert");
 var m1 = jsonValidator.createMarker(true);
 var markedSample1 = {
 	name: m1.um("ddchen"),
-	phone: "12345678",
 	hobitts: [{
-		type: "sleep",
 		level: m1.ian(5)
 	}],
 	next: m1.iaa([])
@@ -16,6 +14,8 @@ it('should pass for a correct result', function() {
 	var result = jsonValidator.validate({
 		name: "ddchen",
 		phone: "12345678",
+		age:25,
+		address:"not telling you",
 		hobitts: [{
 			type: "sleep",
 			level: 5
