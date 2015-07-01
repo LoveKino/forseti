@@ -117,4 +117,38 @@ About maker, you need to know more:
   ioo               shortcut of "is one of"                         eg: m.ioo(value , list)  list is a array
 ```
 * you can define your own maker function in prototype level or instance level. We will talk about that later.<br>
+### validate json
+```
+var result = jsonValidator.validate(sourceJson, sample);
 
+console.log(result);
+```
+Sample stands for a group of validation rules. SourceJson is our source data. By call jsonValidator.validate, we get result.
+Result is an object which contains attribute pass and other. If pass is true means sourceJson satisfy validation rule. Otherwise, we get failInfo to present fail massage.
+For example:
+right situdation
+```
+{
+    pass: true
+ }
+```
+wrong situation
+```
+{
+	"pass": false,
+	"failInfo": {
+		"position": {
+			"json": {
+				"phone": "12345678",
+
+			},
+			"propName ": "name "
+		},
+		"type ": "um"
+	}
+}
+```
+* position<br>
+  where to fail.
+* type<br>
+  which kind of rule.
