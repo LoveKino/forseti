@@ -117,6 +117,7 @@ About maker, you need to know more:
   ioo               shortcut of "is one of"                         eg: m.ioo(value , list)  list is a array
 ```
 * you can define your own maker function in prototype level or instance level. We will talk about that later.<br>
+
 ### validate json
 ```
 var result = jsonValidator.validate(sourceJson, sample);
