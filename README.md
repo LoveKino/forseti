@@ -140,21 +140,17 @@ For example:<br>
 {
 	"pass": false,
 	"failInfo": {
-		"position": {
+		"position": { //Where to fail.
 			"json": {
 				"phone": "12345678",
 
 			},
 			"propName ": "name "
 		},
-		"type ": "um"
+		"type ": "um" //Which kind of rule.
 	}
 }
 ```
-* position<br>
-  Where to fail.
-* type<br>
-  Which kind of rule.
 
 Right now, we know that how to what forseti can do and how to use forseti. Next, we will talk how to expand validation rules.
 
