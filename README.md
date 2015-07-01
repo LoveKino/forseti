@@ -222,4 +222,4 @@ jsonValidator.registerMarkerMap({
 
 allow validation rule nest
 -----------------------------------
-allow nest like: maker.um(maker.ian(value))
+Allow nest like: m.um(m.ian(value)), means value is "um" and "ian".
