@@ -100,7 +100,8 @@ var sample = {
 Sample is the key to define validation rules. Sample looks similar to sourceJson, but there are some Differences.
 * missing some attributes
 * there are some special sentances like 'name: m.um("ddchen")', 'level: m.ian(5)'.<br>
-m is a maker we defined in previous sentance. A maker contain a group of functions which you can be used to declare rules.
+
+M is a maker we defined in previous sentance. A maker contain a group of functions which you can be used to declare rules.
 For example: 
 * 'name: m.um("ddchen")' mean attibute name is unmissing. (um is the shortcut of unmissing).
 * 'level: m.ian(5)' means attribute level is a number type. (ian is the shortcut of 'is a number').<br>
