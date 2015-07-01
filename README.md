@@ -100,5 +100,19 @@ var sample = {
 Sample is the key to define validation rules. Sample looks similar to sourceJson, but there are some Differences.
 * miss some attributes
 * there are some special sentances like 'name: m.um("ddchen")', 'level: m.ian(5)'.<br>
-
+m is a maker we defined in previous sentance. A maker contain a group of functions which you can be used to declare rules.
+For example: 
+* 'name: m.um("ddchen")' mean attibute name is unmissing. (um is the shortcut of unmissing).
+* 'level: m.ian(5)' means attribute level is a number type. (ian is the shortcut of 'is a number').<br>
+Right now, we understand that by using function of a maker to wrapper an attribute, we can declare a validtion rule on the attribute.
+About maker, you need to know more:
+* we already defined a goup of functions.<br>
+  um                shortcut of ummissing                           eg: m.um(value)
+  ian               shortcut of "is a number"                       eg: m.ian(value)
+  nu                shortcut of "not null"                          eg: m.nu(value)
+  iaa               shortcut of "is a array"                        eg: m.iaa(value)
+  inan              shortcut of "is not a number"                   eg: m.inan(value)
+  im                shortcut of "is matching"                       eg: m.im(value , regExp) regExp is a regular expression
+  ioo               shortcut of "is one of"                         eg: m.ioo(value , list)  list is a array
+* you can define your own maker function in prototype level or instance level. We will talk about that later.<br>
 
