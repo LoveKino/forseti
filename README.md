@@ -152,7 +152,7 @@ For example:<br>
 }
 ```
 
-Right now, we know that how to what forseti can do and how to use forseti. Next, we will talk how to expand validation rules.
+Right now, we know what forseti can do and how to use forseti. Next, we will talk how to expand validation rules.
 
 Expand validation rules
 -----------------------------------
