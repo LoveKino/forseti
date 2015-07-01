@@ -14,8 +14,8 @@ it('should pass for a correct result', function() {
 	var result = jsonValidator.validate({
 		name: "ddchen",
 		phone: "12345678",
-		age:25,
-		address:"not telling you",
+		age: 25,
+		address: "not telling you",
 		hobitts: [{
 			type: "sleep",
 			level: 5
@@ -85,6 +85,34 @@ it('should "is not a array" plugin works', function() {
 	(function() {
 		var result = jsonValidator.validate({
 			name: []
+		}, markedSample2);
+		console.log(JSON.stringify(result));
+		assert.equal(result.pass, false);
+		assert.equal(result.failInfo.position.propName, "name");
+	})();
+	(function() {
+		var result = jsonValidator.validate({
+			name: "3243"
+		}, markedSample2);
+		console.log(JSON.stringify(result));
+		assert.equal(result.pass, true);
+	})();
+});
+
+it('should work for instance level plugin', function() {
+	var m2 = jsonValidator.createMarker(true);
+	m2.addRule("inab", {
+		check: function(json, propName, extra) {
+			var value = json[propName];
+			return !(value === false || value === true);
+		}
+	});
+	var markedSample2 = {
+		name: m2.inab("ddchen")
+	};
+	(function() {
+		var result = jsonValidator.validate({
+			name: false
 		}, markedSample2);
 		console.log(JSON.stringify(result));
 		assert.equal(result.pass, false);
