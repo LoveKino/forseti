@@ -200,3 +200,37 @@ it('should work for "ioo" plugin', function() {
 		assert.equal(result.failInfo.position.propName, "name");
 	})();
 });
+
+
+it('should work for repeat key object', function() {
+	var m = jsonValidator.createMarker(true);
+	var markedSample = {
+		"ddchen": m.rpk({
+			age: m.um(25)
+		})
+	};
+
+	(function() {
+		var result = jsonValidator.validate({
+			"haa": {
+				age: 323
+			},
+			"dssahaa": {
+				age: 43
+			}
+		}, markedSample);
+		console.log(JSON.stringify(result));
+		assert.equal(result.pass, true);
+	})();
+
+	(function() {
+		var result = jsonValidator.validate({
+			"haa": {},
+			"dssahaa": {
+				age: 43
+			}
+		}, markedSample);
+		console.log(JSON.stringify(result));
+		assert.equal(result.pass, false);
+	})();
+});
