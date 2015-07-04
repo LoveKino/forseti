@@ -1,4 +1,4 @@
-var jsonValidator = require("../lib/jsonValidator.js");
+var jsonValidator = require("../lib/forseti.js");
 var assert = require("assert");
 
 var m1 = jsonValidator.createMarker(true);
@@ -229,6 +229,30 @@ it('should work for repeat key object', function() {
 			"dssahaa": {
 				age: 43
 			}
+		}, markedSample);
+		console.log(JSON.stringify(result));
+		assert.equal(result.pass, false);
+	})();
+});
+
+it('should work for repeat key object(2)', function() {
+	var m = jsonValidator.createMarker(true);
+	var markedSample = {
+		"ddchen": m.rpk(m.inan("what"))
+	};
+
+	(function() {
+		var result = jsonValidator.validate({
+			"haa": "dqwew",
+			"dssahaa": "dssahaa"
+		}, markedSample);
+		console.log(JSON.stringify(result));
+		assert.equal(result.pass, true);
+	})();
+
+	(function() {
+		var result = jsonValidator.validate({
+			"haa": 50
 		}, markedSample);
 		console.log(JSON.stringify(result));
 		assert.equal(result.pass, false);

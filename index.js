@@ -1,1 +1,1 @@
-module.exports = require("./lib/jsonValidator.js");
+module.exports = require("./lib/forseti.js");
