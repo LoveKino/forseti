@@ -258,3 +258,22 @@ it('should work for repeat key object(2)', function() {
 		assert.equal(result.pass, false);
 	})();
 });
+
+it('should work for plain list', function() {
+	var m = jsonValidator.createMarker(true);
+	var markedSample = [
+		m.ian("")
+	];
+
+	(function() {
+		var result = jsonValidator.validate([1, 2, 3, 4], markedSample);
+		console.log(JSON.stringify(result));
+		assert.equal(result.pass, true);
+	})();
+
+	(function() {
+		var result = jsonValidator.validate(["1", "2"], markedSample);
+		console.log(JSON.stringify(result));
+		assert.equal(result.pass, false);
+	})();
+});
