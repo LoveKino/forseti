@@ -117,6 +117,7 @@ About maker, you need to know more:
   inan              shortcut of "is not a number"                   eg: m.inan(value)
   im                shortcut of "is matching"                       eg: m.im(value , regExp) regExp is a regular expression
   ioo               shortcut of "is one of"                         eg: m.ioo(value , list)  list is a array
+  rpk               shortcut if "repeated key"                      eg: m.rpk(value) this one is special, see more next.
 ```
 * you can define your own maker function in prototype level or instance level. We will talk about that later.<br>
 
@@ -220,6 +221,34 @@ jsonValidator.registerMarkerMap({
 			});
 ```
 
-allow validation rule nest
+Allow validation rule nest
 -----------------------------------
 Allow nest like: m.um(m.ian(value)), means value is "um" and "ian".
+
+Support repeat key
+-----------------------------------
+Let's see an example:
+```
+A: {
+	"ddchen":{
+		"age":25
+	},
+	"kino":{
+		"age":24
+	},
+	"somebody":{
+		"age":100
+	}
+}
+```
+For this json, pattern is that each attribute of A is an object, and has an attribute of age which is a number. How to describle that kind of validation rule?
+
+Don't worry, we can use "rpk" to mark an attibute to flag that. 
+sample: 
+```
+{
+	"rkpName":m.rpk({
+		age:m.ian(5)
+	})
+}
+```
