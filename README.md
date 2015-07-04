@@ -225,7 +225,7 @@ Allow validation rule nest
 -----------------------------------
 Allow nest like: m.um(m.ian(value)), means value is "um" and "ian".
 
-Support repeat key
+Support repeated key
 -----------------------------------
 Let's see an example:
 ```
@@ -241,7 +241,7 @@ A: {
 	}
 }
 ```
-For this json, pattern is that each attribute of A is an object, and has an attribute of age which is a number. How to describle that kind of validation rule?
+For this json, pattern is that every attribute of A is an object, and has an attribute of age which is a number. How to describle that kind of validation rule?
 
 Don't worry, we can use "rpk" to mark an attibute to flag that. 
 sample: 
