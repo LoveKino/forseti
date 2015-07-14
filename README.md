@@ -113,7 +113,7 @@ About maker, you need to know more:
   um                shortcut of unmissing                           eg: m.um(value)
   ian               shortcut of "is a number"                       eg: m.ian(value)
   nu                shortcut of "not null"                          eg: m.nu(value)
-  iaa               shortcut of "is a array"                        eg: m.iaa(value)
+  iaa               shortcut of "is an array"                        eg: m.iaa(value)
   inan              shortcut of "is not a number"                   eg: m.inan(value)
   im                shortcut of "is matching"                       eg: m.im(value , regExp) regExp is a regular expression
   ioo               shortcut of "is one of"                         eg: m.ioo(value , list)  list is a array
