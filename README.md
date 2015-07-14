@@ -8,14 +8,14 @@ Assume there is a json type data, I do not know it's correct or not. So I will v
 For example, I get two json fomat data:
 ```
 A:{
-	"name": "ddchen",
+	"name": "Tom",
 	"age": 25
 }
 ```
 and 
 ```
 B:{
-	"name": "ddchen",
+	"name": "Tom",
 	"age": "25"
 }
 ```
@@ -31,7 +31,7 @@ It looks like this:
 var jsonValidator = require("forseti");
 
 var sourceJson = {
-	name: "ddchen",
+	name: "Tom",
 	phone: "12345678",
 	hobitts: [{
 		type: "sleep",
@@ -42,7 +42,7 @@ var sourceJson = {
 
 var m = jsonValidator.createMarker(true);
 var sample = {
-	name: m.um("ddchen"),
+	name: m.um("Tom"),
 	hobitts: [{
 		level: m.ian(5)
 	}],
@@ -71,7 +71,7 @@ npm install forseti
 ### get source json
 ```
 var sourceJson = {
-	name: "ddchen",
+	name: "Tom",
 	phone: "12345678",
 	hobitts: [{
 		type: "sleep",
@@ -90,7 +90,7 @@ We will see how to use maker in the next paragraph.
 ### define sample
 ```
 var sample = {
-	name: m.um("ddchen"),
+	name: m.um("Tom"),
 	hobitts: [{
 		level: m.ian(5)
 	}],
@@ -99,11 +99,11 @@ var sample = {
 ```
 Sample is the key to define validation rules. Sample looks similar to sourceJson, but there are some Differences.
 * missing some attributes
-* there are some special sentances like 'name: m.um("ddchen")', 'level: m.ian(5)'.<br>
+* there are some special sentances like 'name: m.um("Tom")', 'level: m.ian(5)'.<br>
 
 M is a maker we defined in previous sentance. A maker contain a group of functions which you can be used to declare rules.
 For example: 
-* 'name: m.um("ddchen")' mean attibute name is unmissing. (um is the shortcut of unmissing).
+* 'name: m.um("Tom")' mean attibute name is unmissing. (um is the shortcut of unmissing).
 * 'level: m.ian(5)' means attribute level is a number type. (ian is the shortcut of 'is a number').<br>
 
 Right now, we understand that by using function of a maker to wrapper an attribute, we can declare a validtion rule on the attribute.
@@ -177,7 +177,7 @@ m.addRule("inab", {
 
 // then we can use that
 var markedSample = {
-	name: m.inab("ddchen")
+	name: m.inab("Tom")
 };
 ```
 or use a map
@@ -230,7 +230,7 @@ Support repeated key
 Let's see an example:
 ```
 A: {
-	"ddchen":{
+	"Tom":{
 		"age":25
 	},
 	"kino":{
