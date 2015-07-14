@@ -110,7 +110,7 @@ Right now, we understand that by using function of a maker to wrapper an attribu
 About maker, you need to know more:
 * we already defined a goup of functions.<br>
 ```
-  um                shortcut of ummissing                           eg: m.um(value)
+  um                shortcut of unmissing                           eg: m.um(value)
   ian               shortcut of "is a number"                       eg: m.ian(value)
   nu                shortcut of "not null"                          eg: m.nu(value)
   iaa               shortcut of "is a array"                        eg: m.iaa(value)
