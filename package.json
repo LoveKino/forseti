@@ -1,7 +1,7 @@
 {
   "name": "forseti",
   "version": "1.0.6",
-  "description": "json validator",
+  "description": "Highly extended json validator based on sample thingking.",
   "directories": {
     "test": "test"
   },
